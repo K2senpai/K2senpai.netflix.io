@@ -1,0 +1,392 @@
+<!DOCTYPE html>
+<html lang="fr">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="css/bootstrap.min.css">
+  <link rel="stylesheet" href="css/boxicons.min.css">
+  <link rel="stylesheet" href="css/locomotive-scroll.min.css">
+  <link rel="stylesheet" href="css/style.css">
+  <title>netflix</title>
+</head>
+
+<body data-scroll-container data-barba="wrapper">
+  <!-- MODAL CREATION PROFIL-->
+  <div class="modal fade" id="inscriptionProfil" data-bs-keyboard="false" tabindex="-1"
+    aria-labelledby="inscriptionProfilLabel" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-scrollable">
+      <div class="modal-content border-0">
+        <div class="modal-header border-0 bg-dark d-flex flex-column justify-content-center w-100">
+          <div class="modal-title logo_header align-self-center" id="connexionProfilLabel"><img
+              src="img/logo_transparent.png" alt="" srcset=""></div>
+        </div>
+        <div class="modal-body bg-dark">
+          <form class="bg-dark form_sign" action="" method="POST">
+            <div class="col-md-12 position-relative">
+              <input type="text" class="form-control mb-3 erreur" placeholder="Entrez votre pseudonyme" required
+                id="pseudonyme">
+              <span class="bx bx-error indice-validation-error"></span>
+            </div>
+            <div class="col-md-12 position-relative">
+              <input type="number" class="form-control mb-3 cool" placeholder="Entrez votre numéro de téléphone"
+                required id="numeroTelephone">
+              <span class="bx bx-check indice-validation-success"></span>
+            </div>
+            <div class="col-md-12 position-relative">
+              <input type="email" class="form-control mb-3" placeholder="Entrez votre adresse mail" required
+                id="numeroTelephone">
+            </div>
+            <div class="col-md-12 position-relative">
+              <input type="password" class="form-control mb-3" placeholder="Entrez votre mot de passe" required
+                id="motPasse">
+              <span class="bx bx-show-alt show-mdp"></span>
+              <span class="bx bx-hide hide-mdp"></span>
+              <div class="indicateur w-100 mt-1 mb-3">
+                <span class="indicateur-item easy card-text text-center p-0 rounded-pill">Faible</span>
+                <span class="indicateur-item medium card-text text-center p-0 rounded-pill">Moyen</span>
+                <span class="indicateur-item hard card-text text-center p-0 rounded-pill">Fort</span>
+              </div>
+            </div>
+            <div class="col-12">
+              <input type="password" class="form-control mb-3" placeholder="Confirmez votre mot de passe" required
+                id="motPasseconfirme">
+            </div>
+            <!-- <div class="col-12 other_choice d-flex flex-column justify-content-center align-items-center">
+              <h3 class="text-center text-secondary fs-6">ou inscrivez-vous avec</h3>
+              <div class="other_choice_social d-flex justify-content-around w-25 align-items-center">
+                <a href=""><em class="bx bxl-google bx-sm"></em></a>
+                <a href=""><em class="bx bxl-facebook-circle bx-sm"></em></a>
+              </div>
+            </div> -->
+        </div>
+        <div class="modal-footer border-0 bg-dark d-flex flex-column w-100 justify-content-around">
+          <button type="submit" class="connexion-profil p-2 w-100 rounded-3 form-control border-0 fw-bold"
+            id="inscription">S'inscrire</button>
+          <a href="" class="text-decoration-none only_count" data-bs-toggle="modal"
+            data-bs-target="#connexionProfil">J'ai
+            déjà un compte</a>
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>
+  <!-- FIN MODAL CREATION PROFIL -->
+  <!-- MODAL CONNEXION PROFIL-->
+  <div class="modal fade" id="connexionProfil" data-bs-keyboard="false" tabindex="-1"
+    aria-labelledby="connexionProfilLabel" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-scrollable">
+      <div class="modal-content border-0">
+        <div class="modal-header border-0 bg-dark d-flex flex-column justify-content-center w-100">
+          <div class="modal-title logo_header align-self-center" id="connexionProfilLabel"><img
+              src="img/logo_transparent.png" alt="" srcset=""></div>
+        </div>
+        <div class="modal-body bg-dark">
+          <form class="bg-dark form_sign" action="" method="POST">
+            <div class="col-md-12">
+              <input type="text" class="form-control mb-3 tel-Wallet"
+                placeholder="Entrez votre pseudonyme ou votre numero de telephone" required>
+            </div>
+            <div class="col-md-12">
+              <input type="password" class="form-control password-wallet" placeholder="Entrez votre mot de passe"
+                required>
+            </div>
+        </div>
+        <div class="modal-footer border-0 bg-dark d-flex flex-column w-100 justify-content-around">
+          <button type="submit"
+            class="connexion-profil p-2 w-100 rounded-3 button-connexion form-control border-0 fw-bold"><span
+              class="bx bx-check connexion-ok"></span> Connexion</button>
+          <a href="" class="text-decoration-none only_count" data-bs-toggle="modal"
+            data-bs-target="#inscriptionProfil">Je
+            n'ai pas encore de compte</a>
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>
+  <!-- FIN MODAL CONNEXION PROFIL -->
+  <section class="container-fluid section_start p-0" data-scroll-section id="page" data-barba="container"
+    data-barba-namespace="home">
+    <div class="row p-5" data-scroll data-scroll-speed="1">
+      <nav class="navigation d-flex justify-content-between align-items center">
+        <div class="logo_header"><img src="img/logo_transparent.png" alt="" srcset=""></div>
+      </nav>
+    </div>
+    <div class="row menu_expand m-0" id="menu_expand" data-scroll data-scroll-sticky data-scroll-target="#page">
+      <div class="col-7 p-5" style="background: #111;">
+        <div class="menu_expand_items">
+          <div class="menu_expand_item element"><a href="#"
+              class="menu_expand_item_visible element info_societe_item">Accueil</a>
+          </div>
+          <div class="menu_expand_item element" data-bs-toggle="modal" data-bs-target="#connexionProfil"><span
+              class="menu_expand_item_visible info_societe_item">Connexion / Inscription</span>
+          </div>
+          <div class="menu_expand_item element"><span
+              class="menu_expand_item_visible info_societe_item">Abonnement</span>
+          </div>
+          <div class="menu_expand_item element"><a href="#faq"
+              class="menu_expand_item_visible info_societe_item">FAQ</a>
+          </div>
+          <div class="menu_expand_item element"><a href="" class="menu_expand_item_visible info_societe_item">Politique
+              de
+              confidentialité</a>
+          </div>
+        </div>
+        <div class="info_social mt-3">
+          <span class="info_social_item element"><em class="bx bx-copyright"></em>2022 netflix | contact@netflix.site |
+            +1
+            51484514814</span>
+          <div class="social_link">
+            <a href="" class="element"><em class="bx bxl-facebook"></em></a>
+            <a href="" class="element"><em class="bx bxl-instagram"></em></a>
+            <a href="" class="element"><em class="bx bxl-tiktok"></em></a>
+          </div>
+        </div>
+      </div>
+      <div class="col pt-5">
+        <!-- <div class="info_societe">
+        <div class="info_societe_item border">+1 154511454584</div>
+        <div class="info_societe_item">contact@netflix.site</div>
+        <div class="info_societe_item">
+          <a href=""> <em class="bx bxl-facebook"></em></a>
+          <a href=""><em class="bx bxl-instagram"></em></a>
+          <a href=""><em class="bx bxl-tiktok"></em></a>
+        </div>
+      </div> -->
+      </div>
+    </div>
+    <div class="row grid_presentation_container p-0 m-0">
+      <div class="grid_presentation">
+        <div class="col_element" data-scroll data-scroll-speed="3">
+          <div class="grid_element"><img src="img/coming1.jpg" alt="" srcset=""></div>
+          <div class="grid_element"><img src="img/coming2.jpg" alt="" srcset=""></div>
+          <div class="grid_element"><img src="img/coming3.jpg" alt="" srcset=""></div>
+          <div class="grid_element"><img src="img/coming4.jpg" alt="" srcset=""></div>
+          <div class="grid_element"><img src="img/coming5.jpg" alt="" srcset=""></div>
+        </div>
+        <div class="col_element" data-scroll data-scroll-speed="5">
+          <div class="grid_element"><img src="img/coming6.jpeg" alt="" srcset=""></div>
+          <div class="grid_element"><img src="img/coming7.jpg" alt="" srcset=""></div>
+          <div class="grid_element"><img src="img/coming8.jpg" alt="" srcset=""></div>
+          <div class="grid_element"><img src="img/coming9.jpg" alt="" srcset=""></div>
+          <div class="grid_element"><img src="img/m1.jpg" alt="" srcset=""></div>
+        </div>
+        <div class="col_element" data-scroll data-scroll-speed="-3">
+          <div class="grid_element"><img src="img/m9.jpg" alt="" srcset=""></div>
+          <div class="grid_element"><img src="img/m10.jpg" alt="" srcset=""></div>
+          <div class="grid_element"><img src="img/m2.jpg" alt="" srcset=""></div>
+          <div class="grid_element"><img src="img/m3.jpg" alt="" srcset=""></div>
+        </div>
+        <div class="col_element" data-scroll data-scroll-speed="5">
+          <div class="grid_element"><img src="img/m4.jpg" alt="" srcset=""></div>
+          <div class="grid_element"><img src="img/m5.jpg" alt="" srcset=""></div>
+          <div class="grid_element"><img src="img/m6.jpg" alt="" srcset=""></div>
+          <div class="grid_element"><img src="img/m7.jpg" alt="" srcset=""></div>
+          <div class="grid_element"><img src="img/m8.png" alt="" srcset=""></div>
+        </div>
+        <div class="col_element" data-scroll data-scroll-speed="-3">
+          <div class="grid_element"><img src="img/home1.jpg" alt="" srcset=""></div>
+          <div class="grid_element"><img src="img/home2.jpg" alt="" srcset=""></div>
+          <div class="grid_element"><img src="img/home3.jpg" alt="" srcset=""></div>
+          <div class="grid_element"><img src="img/coming7.jpg" alt="" srcset=""></div>
+        </div>
+      </div>
+    </div>
+    <div class="row title_film_header_container">
+      <div class="col-12 title_film_header text-center shake_presentation" data-scroll data-scroll-speed="1">Films.
+        Séries. Animés. <br> <span class="text_small">L'univers du cinéma Africain à votre portée</span></div>
+    </div>
+    <div class="row info_cam_container_general m-0 p-0">
+      <div class="info_cam_container m-0 p-0">
+        <div class="info_cam element" data-scroll data-scroll-speed="1">
+          <div class="couche"></div>
+          <div class="info_cam_text">
+            <h3>Enjoy on your TV.</h3>
+            <p>Watch on Smart TVs, Playstation, Xbox, Chromecast, Apple TV, Blu-ray players, and more.</p>
+          </div> <img src="img/photo_2.jpg" alt="" srcset="">
+          <div class="video_info"><video class="border-0" src="img/video_2.mp4" autoplay loop muted></video></div>
+        </div>
+        <div class="info_cam element" data-scroll data-scroll-speed="2">
+          <div class="couche"></div>
+          <div class="info_cam_text">
+            <h3>Download your shows to watch offline.</h3>
+            <p>Save your favorites easily and always have something to watch.</p>
+          </div><img src="img/photo_5.jpg" alt="" srcset="">
+        </div>
+        <div class="info_cam element" data-scroll data-scroll-speed="2">
+          <div class="couche"></div>
+          <div class="info_cam_text">
+            <h3>Watch everywhere.Enjoy on your TV.</h3>
+            <p>Stream unlimited movies and TV shows on your phone, tablet, laptop, and TV</p>
+          </div><img src="img/photo_6.jpg" alt="" srcset="">
+        </div>
+        <div class="info_cam element" data-scroll data-scroll-speed="1">
+          <div class="couche"></div>
+          <div class="info_cam_text">
+            <h3>Create profiles for kids.</h3>
+            <p>Send kids on adventures with their favorite characters in a space made just for them—free with your
+              membership.</p>
+          </div><img src="img/photo_1.jpg" alt="" srcset="">
+          <div class="video_info"><video class="border-0" src="img/video_2.mp4" muted></video></div>
+        </div>
+      </div>
+    </div>
+    <div class="row communaute element" data-scroll data-scroll-direction="horizontal" data-scroll-speed="-2">
+      <div class="col-12">Rejoignez la communauté</div>
+      <div data-bs-toggle="modal" data-bs-target="#inscriptionProfil"
+        class="cursor_community d-flex justify-content-center align-items-center">Cliquez ici <br> pour nous rejoindre
+      </div>
+    </div>
+    <div class="row pricing">
+      <div class="col-lg-4 col-md-4 col-sm-12">
+        <div class="pricing_item pricing_1" data-scroll data-scroll-speed="-3" data-scroll-direction="horizontal">
+          <h2 class="pricing_item_title d-flex flex-column">Basique <div class="m-0"><em class="bx bx-star fs-1"></em></div></h2>
+          <div class="bar_pricing"></div>
+          <div class="bar_pricing"></div>
+          <div class="bar_pricing"></div>
+          <div class="bar_pricing"></div>
+          <div class="bar_pricing"></div>
+          <div class="bar_pricing_big"></div>
+          <div class="bar_pricing_rounded">1000 XAF<span>Par mois</span></div>
+          <ul class="list_price_dispo">
+            <li><em class="bx bx-check"></em>&nbsp;Accès illimité</li>
+            <li><em class="bx bx-check"></em>&nbsp;Films à la demande</li>
+            <li><em class="bx bx-check"></em>&nbsp;Télechargement illimité</li>
+            <li><em class="bx bx-check"></em>&nbsp;Compte netflix premium</li>
+            <li><em class="bx bx-check"></em>&nbsp;Accès illimité</li>
+            <li><em class="bx bx-check"></em>&nbsp;Accès illimité</li>
+          </ul>
+          <button type="button" class="border-0 abonnement_button element">S'aboner</button>
+        </div>
+      </div>
+      <div class="col-lg-4 col-md-4 col-sm-12">
+        <div class="pricing_item pricing_2" data-scroll data-scroll-speed="-4" data-scroll-direction="horizontal">
+          <h2 class="pricing_item_title d-flex flex-column">Standard <div class="m-0"><em class="bx bx-star fs-1"></em><em class="bx bx-star fs-1"></em></div></h2>
+          <div class="bar_pricing"></div>
+          <div class="bar_pricing"></div>
+          <div class="bar_pricing"></div>
+          <div class="bar_pricing"></div>
+          <div class="bar_pricing"></div>
+          <div class="bar_pricing_big"></div>
+          <div class="bar_pricing_rounded">2500 XAF<span>Par mois</span></div>
+          <ul class="list_price_dispo">
+            <li><em class="bx bx-check"></em>&nbsp;Accès illimité</li>
+            <li><em class="bx bx-check"></em>&nbsp;Films à la demande</li>
+            <li><em class="bx bx-check"></em>&nbsp;Télechargement illimité</li>
+            <li><em class="bx bx-check"></em>&nbsp;Compte netflix premium</li>
+            <li><em class="bx bx-check"></em>&nbsp;Accès illimité</li>
+            <li><em class="bx bx-check"></em>&nbsp;Accès illimité</li>
+          </ul>
+          <button type="button" class="border-0 abonnement_button element">S'aboner</button>
+        </div>
+      </div>
+      <div class="col-lg-4 col-md-4 col-sm-12">
+        <div class="pricing_item pricing_3" data-scroll data-scroll-speed="-5" data-scroll-direction="horizontal">
+          <h2 class="pricing_item_title d-flex flex-column">Premium <div class="m-0"><em class="bx bx-star fs-1"></em><em class="bx bx-star fs-1"></em><em class="bx bx-star fs-1"></em></div></h2>
+          <div class="bar_pricing"></div>
+          <div class="bar_pricing"></div>
+          <div class="bar_pricing"></div>
+          <div class="bar_pricing"></div>
+          <div class="bar_pricing"></div>
+          <div class="bar_pricing_big"></div>
+          <div class="bar_pricing_rounded">5000 XAF<span>Par mois</span></div>
+          <ul class="list_price_dispo">
+            <li><em class="bx bx-check"></em>&nbsp;Accès illimité</li>
+            <li><em class="bx bx-check"></em>&nbsp;Films à la demande</li>
+            <li><em class="bx bx-check"></em>&nbsp;Télechargement illimité</li>
+            <li><em class="bx bx-check"></em>&nbsp;Compte netflix premium</li>
+            <li><em class="bx bx-check"></em>&nbsp;Accès illimité</li>
+            <li><em class="bx bx-check"></em>&nbsp;Accès illimité</li>
+          </ul>
+          <button type="button" class="border-0 abonnement_button element">S'aboner</button>
+        </div>
+      </div>
+    </div>
+    <div class="row faq" data-scroll id="faq">
+      <div class="col-3 text-white">
+        <h2 class="faq_title">FAQ</h2>
+      </div>
+      <div class="col bg-white p-5">
+        <div class="faq_item element">
+          <h3 class="faq_item_title">Comment s'inscrire sur netflix ?<em class="bx bx-minus close_faq"></em><em
+              class="bx bx-plus plus_faq"></em></h3>
+          <div class="faq_item_content">
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Repellendus, dolores placeat voluptatibus,
+            recusandae sint dignissimos quis iusto voluptatum impedit laudantium est alias vel molestiae quas, officia
+            cupiditate. Quia, illum officiis.
+          </div>
+        </div>
+        <div class="faq_item element">
+          <h3 class="faq_item_title">Comment s'inscrire sur netflix ? <em class="bx bx-minus close_faq"></em><em
+              class="bx bx-plus plus_faq"></em></h3>
+          <div class="faq_item_content">
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Repellendus, dolores placeat voluptatibus,
+            recusandae sint dignissimos quis iusto voluptatum impedit laudantium est alias vel molestiae quas, officia
+            cupiditate. Quia, illum officiis.
+          </div>
+        </div>
+        <div class="faq_item element">
+          <h3 class="faq_item_title">Comment s'inscrire sur netflix ? <em class="bx bx-minus close_faq"></em><em
+              class="bx bx-plus plus_faq"></em></h3>
+          <div class="faq_item_content">
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Repellendus, dolores placeat voluptatibus,
+            recusandae sint dignissimos quis iusto voluptatum impedit laudantium est alias vel molestiae quas, officia
+            cupiditate. Quia, illum officiis.
+          </div>
+        </div>
+        <div class="faq_item element">
+          <h3 class="faq_item_title">Comment s'inscrire sur netflix ? <em class="bx bx-minus close_faq"></em><em
+              class="bx bx-plus plus_faq"></em></h3>
+          <div class="faq_item_content">
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Repellendus, dolores placeat voluptatibus,
+            recusandae sint dignissimos quis iusto voluptatum impedit laudantium est alias vel molestiae quas, officia
+            cupiditate. Quia, illum officiis.
+          </div>
+        </div>
+        <div class="faq_item element">
+          <h3 class="faq_item_title">Comment s'inscrire sur netflix ? <em class="bx bx-minus close_faq"></em><em
+              class="bx bx-plus plus_faq"></em></h3>
+          <div class="faq_item_content">
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Repellendus, dolores placeat voluptatibus,
+            recusandae sint dignissimos quis iusto voluptatum impedit laudantium est alias vel molestiae quas, officia
+            cupiditate. Quia, illum officiis.
+          </div>
+        </div>
+        <div class="faq_item element">
+          <h3 class="faq_item_title">Comment s'inscrire sur netflix ? <em class="bx bx-minus close_faq"></em><em
+              class="bx bx-plus plus_faq"></em></h3>
+          <div class="faq_item_content">
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Repellendus, dolores placeat voluptatibus,
+            recusandae sint dignissimos quis iusto voluptatum impedit laudantium est alias vel molestiae quas, officia
+            cupiditate. Quia, illum officiis.
+          </div>
+        </div>
+      </div>
+    </div>
+    <div id="cursor" class="cursor cusor_active" data-scroll data-scroll-sticky data-scroll-target="#page"></div>
+    <div class="shake_button element cursor_menu">
+      <button type="button" class="menu border-0" id="menu" data-scroll data-scroll-sticky data-scroll-target="#page">
+        <div class="menu_prev_visible">
+          <div class="bar_menu mb-1"></div>
+          <div class="bar_menu"></div>
+        </div>
+        <span class="menu_prev">Menu</span>
+      </button>
+    </div>
+    <div class="shake_button element cursor_close">
+      <button data-scroll data-scroll-sticky data-scroll-target="#page" type="button"
+        class="border-0 close_menu d-flex align-items-center justify-content-center" id="close_menu"><em
+          class="bx bx-x bx-lg menu_prev_visible"></em><span class="menu_prev">Fermer</span></button>
+    </div>
+  </section>
+  <script src="js/bootstrap.min.js"></script>
+  <script src="js/locomotive-scroll.min.js"></script>
+  <script src="js/gsap.min.js"></script>
+  <script src="js/app.js"></script>
+  <script src="js/move.js"></script>
+  <script src="js/sup.js"></script>
+  <script src="js/loco.js"></script>
+</body>
+
+</html>
